@@ -1,0 +1,78 @@
+<form
+  need-validation
+  novalidate
+  class="containerInside container card shadow mt-5 bg-white rounded"
+>
+  <div class="p-4">
+    <div class="card-body">
+      <div class="row header-row P-2">
+        <div class="col">
+          <!-- <p class="ptitle ">Editar mi perfil</p> -->
+          <span class="text-secondary">EDITAR PERFIL</span>
+        </div>
+      </div>
+      <hr />
+      <div class="form">
+        <div class="row regular-row m-2 align-items-baseline">
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">Apellidos</div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <input
+              id="apellido"
+              type="text"
+              class="form-control"
+              placeholder=" "
+              formControlName="apellido"
+            />
+          </div>
+
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">Nombre</div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <input
+              id="nombre"
+              type="text"
+              class="form-control"
+              placeholder=""
+              formControlName="nombre"
+            />
+          </div>
+
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">
+            Correo Institucional
+          </div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <input
+              id="correo"
+              type="text"
+              class="form-control"
+              placeholder=""
+              formControlName="correo"
+            />
+          </div>
+        </div>
+
+        <hr />
+        <div class="footer-row d-md-flex justify-content-md-end mb-3">
+          <div class="d-grid gap-2 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              [routerLink]="['../ver-usuario']"
+            >
+              Cancelar
+            </button>
+          </div>
+          <div class="d-grid gap-2 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2">
+            <button
+              type="submit"
+              id="btn-sub"
+              (submit)="(true)"
+              class="btn btn-success"
+            >
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

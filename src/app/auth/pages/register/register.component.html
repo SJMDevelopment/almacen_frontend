@@ -1,0 +1,211 @@
+<form
+  need-validation
+  novalidate
+  class="container containerInside card shadow mt-5 bg-white rounded"
+>
+  <div class="p-4">
+    <div class="card-body">
+      <div class="row header-row P-2">
+        <div class="col">
+          <!-- <p class="ptitle">Registrar nuevo usuario</p> -->
+          <span class="text-secondary">REGISTRO</span>
+        </div>
+      </div>
+      <hr />
+      <div class="alert alert-warning">
+        <strong>¡Importante!</strong> Antes de enviar, verifica que la
+        información se ingresó correctamente.
+      </div>
+      <div class="form">
+        <div class="row regular-row mt-4">
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">Apellidos</div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <input
+              id="apellido"
+              type="text"
+              class="form-control"
+              placeholder=" "
+              formControlName="apellido"
+            />
+          </div>
+        </div>
+        <div class="row regular-row mt-4">
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">Nombre</div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <input
+              id="nombre"
+              type="text"
+              class="form-control"
+              placeholder=""
+              formControlName="nombre"
+            />
+          </div>
+        </div>
+
+        <div class="row regular-row mt-4">
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">
+            Correo Institucional
+          </div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <div class="formfloatig">
+              <input
+                formControlName="correo"
+                id="Correo-"
+                type="text"
+                class="form-control"
+                placeholder="ejemplo@udea.edu.co"
+              />
+              <label for="Correo-" class="formLabel"></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row regular-row mt-4">
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">
+            Tipo de Identificación
+          </div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <div class="formfloatig">
+              <select
+                class="form-select form-select-lg"
+                id="tipo_identificacion"
+                formControlName="tipo_identificacion"
+                required
+                placeholder=" "
+              >
+                <option [value]="tipo" *ngFor="let tipo of tipoIdentificacion">
+                  {{ tipo | uppercase }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row regular-row mt-4">
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">
+            Número de Identificación
+          </div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <div class="formfloatig">
+              <input
+                id="identificacion"
+                formControlName="identificacion"
+                type="text"
+                class="form-control"
+                placeholder=" "
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row regular-row mt-4">
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">Ocupacion</div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <div class="formfloatig">
+              <select
+                class="form-select form-select-lg"
+                id="roles_id"
+                formControlName="roles_id"
+                required
+                placeholder=" "
+              >
+                <option [value]="rol" *ngFor="let rol of ocupacion">
+                  {{ rol | uppercase }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row regular-row mt-4">
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">Facultad</div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <div class="formfloatig">
+              <select
+                class="form-select form-select-lg"
+                id="escalafon"
+                formControlName="escalafon"
+                placeholder=" "
+              >
+                <option [value]="facultad" *ngFor="let facultad of facultad">
+                  {{ facultad | uppercase }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row regular-row mt-4">
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">
+            Departamento/Instituto
+          </div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <div class="formfloatig">
+              <select
+                class="form-select form-select-lg"
+                id="departamentos_id"
+                formControlName="departamentos_id"
+                required
+                placeholder=" "
+              >
+                <option *ngFor="let departamento of departamento" [value]="departamento">
+                  {{ departamento | uppercase }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row regular-row mt-4">
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">Contraseña</div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <div class="formfloatig">
+              <input
+                id="Contrasena"
+                type="password"
+                class="form-control"
+                formControlName="contrasena"
+                placeholder=" "
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row regular-row mt-4">
+          <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">
+            Confirmar Contraseña
+          </div>
+          <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+            <div class="formfloatig">
+              <input
+                id="Confirmar"
+                type="password"
+                class="form-control"
+                formControlName="confirmarContrasena"
+                placeholder=" "
+              />
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="footer-row d-md-flex justify-content-md-end mb-3">
+          <div class="d-grid gap-2 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2">
+            <button class="btn btn-secondary" [routerLink]="['../login']">
+              Cancelar
+            </button>
+          </div>
+
+          <div class="d-grid gap-2 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2">
+            <button id="btn-sub" (submit)="(true)" class="btn btn-submit">
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

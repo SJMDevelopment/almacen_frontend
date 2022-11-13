@@ -1,0 +1,158 @@
+<div class="containerInside card shadow mt-5 bg-white rounded p-5">
+  <div class="row header-row mb-1">
+    <div class="col">
+      <span class="text-secondary spantext">EDITAR RESERVA ACTIVO</span>
+    </div>
+  </div>
+
+  <hr />
+
+  <form class="need-validation" need-validation novalidate>
+    <div class="">
+      <div class="formfloatig d-flex" style="flex-direction: column">
+        <div
+          *ngFor="let producto of activos; last as isLast; let i = index"
+          class="arrayLike formfloatig d-flex"
+        >
+          <label class="btn-btn-default is-hoverable" style="width: -webkit-fill-available;">
+            <input
+              [id]="i"
+              class="file-upload"
+              type="file"
+              (change)="onUpload($event, i)"
+            />
+            <div class="formfloatig">
+              <select
+                class="form-select form-select-lg mb-3"
+                id="floating_aulas"
+                formControlName="aulas"
+                required
+                placeholder=" "
+              ></select>
+            </div>
+          </label>
+
+          <div class="buttons">
+            <button
+              class="btn btn-circle btn-remove btn-sm m-1"
+              type="button"
+              (click)="removeFile(i)"
+            >
+              <i class="fa fa-minus"></i>
+            </button>
+            <button
+              class="btn btn-circle btn-add btn-sm m-1"
+              type="button"
+              (click)="activos.push(1)"
+              *ngIf="isLast && activos.length < 15"
+            >
+              <i class="fa fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="mt-4 row regular-row">
+        <span class="col-md-4 col-xs-12 col-sm-12 label">Fechas *</span>
+        <div class="col-sm-12 col-xs-12 col-md-8" style="margin-bottom: 5px">
+          <div class="input-group">
+            <input
+              #dpFromDate
+              class="form-control"
+              type="text"
+              placeholder="aaaa-mm-dd - aaaa-mm-dd"
+              name="dpFromDate"
+              formControlName="fecha_inicio"
+            />
+
+            <button #buttonEl type="button" class="btn btn-outline-secondary">
+              <i class="fa fa-calendar"> </i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xs-6 col-md-6" hidden>
+        <div class="input-group">
+          <input
+            #dpToDate
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dpToDate"
+            formControlName="fecha_fin"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4 row regular-row">
+      <span class="col-md-4 col-xs-12 col-sm-12 label">Hora Inicio *</span>
+      <div class="col-sm-12 col-xs-12 col-md-8" style="margin-bottom: 5px">
+        <div class="input-group">
+          <input
+            #dpFromDate
+            class="form-control"
+            type="text"
+            placeholder=""
+            name="dpFromDate"
+            formControlName="hora_fin"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4 row regular-row">
+      <span class="col-md-4 col-xs-12 col-sm-12 label">Hora Fin *</span>
+      <div class="col-sm-12 col-xs-12 col-md-8" style="margin-bottom: 5px">
+        <div class="input-group">
+          <input
+            #dpFromDate
+            class="form-control"
+            type="text"
+            placeholder=""
+            name="dpFromDate"
+            formControlName="hora_inicio"
+          />
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row regular-row mt-4">
+      <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">Justificación *</div>
+      <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+        <div class="form-group">
+          <textarea
+            id="floatingjustificacion"
+            formControlName="justificacion"
+            class="form-control"
+            type="justificacion"
+            placeholder=" "
+            required
+            rows="5"
+          ></textarea>
+          <label for="floatingjustificacion" class="formLabel"> </label>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <div class="footer-row d-md-flex justify-content-md-end mb-3">
+      <div class="d-grid gap-2 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          [routerLink]="['../ver-reserva-activo']"
+        >
+          Cancelar
+        </button>
+      </div>
+      <div class="d-grid gap-2 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2">
+        <button class="btn btn-success" (submit)="(true)">Enviar</button>
+      </div>
+    </div>
+  </form>
+</div>

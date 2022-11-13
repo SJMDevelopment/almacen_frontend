@@ -1,0 +1,80 @@
+<div class="containerInside container card shadow mt-5 bg-white rounded p-5">
+  <div class="row header-row">
+    <div class="col">
+      <span class="text-secondary">VER RESERVA</span>
+    </div>
+  </div>
+
+  <hr />
+  <div class="row regular-row mt-2">
+    <div class="col-xs-12 col-sm-6 label fw-bold">Solicitante</div>
+    <div class="col-xs-12 col-sm-6">
+       {{reserva?.nombre }}  {{reserva?.apellidos }}
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row regular-row mt-2">
+    <div class="col-xs-12 col-sm-6 label fw-bold">Fecha de Creación</div>
+    <div class="col-xs-12 col-sm-6"> {{reserva.fechaCreacion}} </div>
+  </div>
+
+  <div class="row regular-row mt-2">
+    <div class="col-xs-12 col-sm-6 label fw-bold">Día que Inicia</div>
+    <div class="col-xs-12 col-sm-6">{{reserva?.fechaReserva }} {{reserva?.horaInicio}}</div>
+  </div>
+
+  <div class="row regular-row mt-2">
+    <div class="col-xs-12 col-sm-6 label fw-bold">Día que Termina</div>
+    <div class="col-xs-12 col-sm-6">{{reserva?.fechaReserva }} {{reserva?.horaFin}}</div>
+  </div>
+
+
+
+
+  <div class="row regular-row mt-2">
+    <div class="col-xs-12 col-sm-6 label fw-bold">Justificación</div>
+    <div class="col-xs-12 col-sm-6">{{reserva?.justificacion}}</div>
+  </div>
+
+  <hr />
+
+  <div class="row regular-row mt-2">
+    <div class="col-xs-12 col-sm-6 label fw-bold">Estado Actual del permiso</div>
+      <div class="col-xs-12 col-sm-6">
+        <span 
+        class="badge badge-pill pill"
+       > 
+       {{reserva?.estadoActual}}
+        </span>
+      </div>
+  </div>
+
+  <hr />
+
+  <div class="row regular-row mt-2">
+    <div class="col-xs-12 col-sm-6 label fw-bold">Items</div>
+    <a class="col-xs-12 col-sm-6">Items</a>
+  </div>
+
+  <hr />
+  <div class="footer-row d-md-flex justify-content-md-end">
+    <div class="d-grid gap-2 col-sm-12 col-md-4 col-lg-4 col-xl-3 p-2">
+      <button class="btn btn-danger" >
+        
+        Eliminar
+      </button>
+    </div>
+    <div         
+      class="d-grid gap-2 col-sm-12 col-md-4 col-lg-4 col-xl-3 p-2">
+      <button
+        type="button"
+        class="btn btn-warning "
+        [routerLink]="['../editar-reserva-activo']"
+      >
+        Editar
+      </button>
+    </div>
+  </div>
+</div>

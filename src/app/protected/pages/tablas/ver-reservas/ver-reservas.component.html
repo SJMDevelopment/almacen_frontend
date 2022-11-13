@@ -1,0 +1,53 @@
+<div class="container-inside container shadow p-4 mt-5 bg-white rounded">
+  <div class="mb-3 row d-flex justify-content-end">
+    <label
+      for="table-complete-search"
+      class="col-xs-3 col-sm-auto col-form-label"
+      >Buscar:</label
+    >
+    <div class="col-xs-3 col-sm-auto">
+      <input
+        id="table-complete-search"
+        type="text"
+        class="form-control"
+        name="searchTerm"
+      />
+    </div>
+  </div>
+
+  <hr />
+
+  <table class="table table-hover container">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tipo Reserva</th>
+        <th scope="col">Fecha de la Reserva</th>
+        <th scope="col">Fecha Inicio</th>
+        <th scope="col">Fecha Finalizacion</th>
+        <th scope="col">Aula o Activos</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr [routerLink]="['../ver-reserva-activo']">
+        <th scope="row">12</th>
+        <td>Prestamo</td>
+        <td>10/8/2022</td>
+        <td>15/8/2022</td>
+        <td>15/8/2022</td>
+        <td>Anexo</td>
+        <td>En Espera</td>
+      </tr>
+      <tr [routerLink]="['../ver-reserva-aula']">
+        <th scope="row">434</th>
+        <td>Aula</td>
+        <td>10/8/2022</td>
+        <td>15/8/2022</td>
+        <td>15/8/2022</td>
+        <td>6-305</td>
+        <td>Aprobada</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
