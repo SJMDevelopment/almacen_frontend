@@ -1,7 +1,7 @@
 <div class="containerInside card shadow mt-5 bg-white rounded p-5">
   <div class="row header-row mb-1">
     <div class="col">
-      <span class="text-secondary spantext">EDITAR RESERVA AULA</span>
+      <span class="text-secondary spantext">EDITAR RESERVA</span>
     </div>
   </div>
 
@@ -26,14 +26,14 @@
       <hr />
 
       <div class="mt-4 row regular-row">
-        <span class="col-md-4 col-xs-12 col-sm-12 label">Fechas *</span>
+        <span class="col-md-4 col-xs-12 col-sm-12 label">Fecha *</span>
         <div class="col-sm-12 col-xs-12 col-md-8" style="margin-bottom: 5px">
           <div class="input-group">
             <input
               #dpFromDate
               class="form-control"
               type="text"
-              placeholder="aaaa-mm-dd - aaaa-mm-dd"
+              placeholder="aaaa-mm-dd"
               name="dpFromDate"
               formControlName="fecha_inicio"
             />
@@ -44,6 +44,40 @@
           </div>
         </div>
       </div>
+
+      <div class="mt-4 row regular-row">
+        <span class="col-md-4 col-xs-12 col-sm-12 label">Hora Inicio *</span>
+        <div class="col-sm-12 col-xs-12 col-md-8" style="margin-bottom: 5px">
+          <div class="input-group">
+            <input
+              #dpFromDate
+              class="form-control"
+              type="text"
+              placeholder=""
+              name="dpFromDate"
+              formControlName="hora_fin"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 row regular-row">
+        <span class="col-md-4 col-xs-12 col-sm-12 label">Hora Fin *</span>
+        <div class="col-sm-12 col-xs-12 col-md-8" style="margin-bottom: 5px">
+          <div class="input-group">
+            <input
+              #dpFromDate
+              class="form-control"
+              type="text"
+              placeholder=""
+              name="dpFromDate"
+              formControlName="hora_inicio"
+            />
+          </div>
+        </div>
+      </div>
+
+      <hr />
 
       <div class="col-sm-6 col-xs-6 col-md-6" hidden>
         <div class="input-group">
@@ -56,28 +90,27 @@
           />
         </div>
       </div>
-    </div>
 
-    <div class="row regular-row mt-4">
-      <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">Justificación *</div>
-      <div class="col-sm-12 col-xs-12 col-md-8 col-12">
-        <div class="form-group">
-          <textarea
-            id="floatingjustificacion"
-            formControlName="justificacion"
-            class="form-control"
-            type="justificacion"
-            placeholder=" "
-            required
-            rows="5"
-          ></textarea>
-          <label for="floatingjustificacion" class="formLabel"> </label>
+      <div class="row regular-row mt-4">
+        <div class="col-md-4 col-xs-12 col-sm-6 label mb-2">Justificación *</div>
+        <div class="col-sm-12 col-xs-12 col-md-8 col-12">
+          <div class="form-group">
+            <textarea
+              id="floatingjustificacion"
+              formControlName="justificacion"
+              class="form-control"
+              type="justificacion"
+              placeholder=" "
+              required
+              rows="5"
+            ></textarea>
+            <label for="floatingjustificacion" class="formLabel"> </label>
+          </div>
         </div>
       </div>
-    </div>
-
-
+      
     <hr />
+    
     <div class="footer-row d-md-flex justify-content-md-end mb-3">
       <div class="d-grid gap-2 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2">
         <button
@@ -91,6 +124,7 @@
       <div class="d-grid gap-2 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2">
         <button class="btn btn-success" (submit)="(true)">Enviar</button>
       </div>
+    </div>
     </div>
   </form>
 </div>
