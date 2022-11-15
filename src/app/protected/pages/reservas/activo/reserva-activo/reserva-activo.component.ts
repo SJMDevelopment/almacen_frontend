@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-reserva-activo',
   templateUrl: './reserva-activo.component.html',
@@ -7,7 +6,8 @@ import { Component } from '@angular/core';
 })
 export class ReservaActivoComponent {
 
-  constructor() { }
+  constructor(
+  ) { }
 
   files: any[] = [];
   activos = [1];

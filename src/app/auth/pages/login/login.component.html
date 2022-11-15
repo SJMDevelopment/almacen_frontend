@@ -32,16 +32,17 @@
                 class="form-control"
                 placeholder="Correo institucional o cédula"
                 formControlName="username"
+                [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
                 autofocus
               />
             </div>
 
             <!-- errors email -->
-            <!-- <div *ngIf="submitted && f.username.errors" class="invalid">
-              <div *ngIf="submitted && f.username.errors?.['required']">
+            <div *ngIf="submitted && f['username'].errors" class="invalid">
+              <div *ngIf="submitted && f['username'].errors?.['required']">
                 El correo es requerido
               </div>
-            </div> -->
+            </div>
 
             <!-- password -->
             <div class="formfloatig mt-3">
@@ -51,15 +52,16 @@
                 class="form-control"
                 placeholder="Contraseña"
                 formControlName="password"
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
               />
             </div>
 
             <!-- errors password -->
-            <!-- <div *ngIf="submitted && f.password.errors" class="invalid">
-              <div *ngIf="submitted && f.password.errors?.['required']">
+            <div *ngIf="submitted && f['password'].errors" class="invalid">
+              <div *ngIf="submitted &&f['password'].errors?.['required']">
                 La contraseña es requerida
               </div>
-            </div> -->
+            </div>
 
             <!-- Recovery password -->
             <div class="d-flex justify-content-start">
